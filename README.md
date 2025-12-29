@@ -22,3 +22,21 @@ Repository for security concepts, educational implementations, and Proof of Conc
 | **CSRF** | ⏳ Pending | - | Cross-Site Request Forgery. |
 | **SSRF** | ⏳ Pending | - | Server-Side Request Forgery. |
 | **IDOR** | ⏳ Pending | - | Insecure Direct Object References. |
+
+## 🔗 Phase 3: API Security & Logic Flaws
+
+| Concept | Status | Implementation | Description |
+|---------|--------|----------------|-------------|
+| **GraphQL Injection** | ⏳ Pending | - | Introspection abuse, depth limits, and query batching attacks. |
+| **Mass Assignment** | ⏳ Pending | - | Binding input fields to internal model properties (e.g., isAdmin=true). |
+| **Race Conditions** | ⏳ Pending | - | Exploiting Time-of-Check vs Time-of-Use (TOCTOU) in coupons/balances. |
+| **Prototype Pollution** | ⏳ Pending | - | JavaScript-specific object injection vectors. |
+
+## 🛡️ Phase 4: Defense Engineering & Infrastructure
+
+| Concept | Status | Implementation | Description |
+|---------|--------|----------------|-------------|
+| **WAF Bypass** | ⏳ Pending | - | How WAFs work and how to evade simple rulesets. |
+| **Security Headers** | ⏳ Pending | - | HSTS, CSP, X-Frame-Options: What they actually do. |
+| **Secrets Management** | ⏳ Pending | - | Environment variables vs Vaults (HashiCorp/AWS KMS). |
+| **Logging & Monitoring** | ⏳ Pending | - | Detecting attacks via ELK/Splunk (SIEM basics for devs). |
