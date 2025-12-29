@@ -1,20 +1,24 @@
 # Mini Explanations & PoCs
 
-This repository contains educational implementations, Proof of Concepts (PoCS), and deep-dive explanations for various cybersecurity and authentication topics.
+Repository for security concepts, educational implementations, and Proof of Concepts (PoCs).
 
-## 📚 Concepts Roadmap
+## 🛡️ Phase 1: Authentication & Identity
 
 | Concept | Status | Implementation | Description |
 |---------|--------|----------------|-------------|
-| **OAuth 2.1 (PKCE)** | ✅ Done | [OAuth-2.1-Educational](./OAuth-2.1-Educational) | Authorization Code Flow with PKCE from scratch (Client, Auth Server, Resource Server). |
-| **XSS** | ⏳ Planned | - | Cross-Site Scripting vulnerabilities and mitigations. |
-| **SQL Injection** | ⏳ Planned | - | Explaining SQLi vectors and prevention. |
-| **CSRF** | ⏳ Planned | - | Cross-Site Request Forgery attacks and defenses. |
-| **SSRF** | ⏳ Planned | - | Server-Side Request Forgery deep dive. |
-| **IDOR** | ⏳ Planned | - | Insecure Direct Object References. |
-| **JWT Attacks** | ⏳ Planned | - | Weak signatures, none algorithm, key confusion. |
-| **Deserialization** | ⏳ Planned | - | Insecure deserialization exploits. |
+| **OAuth 2.1 (PKCE)** | ✅ Done | [OAuth-2.1-Educational](./OAuth-2.1-Educational) | Authorization Code Flow with PKCE from scratch. |
+| **OpenID Connect (OIDC)** | ⏳ Next | - | Adding Identity (ID Token) on top of OAuth 2.0. |
+| **JWT Security** | ⏳ Planned | - | Deep dive into JSON Web Tokens, signatures, and weaknesses. |
+| **Session Management** | ⏳ Planned | - | Secure Cookies (HttpOnly, SameSite) vs LocalStorage. |
+| **RBAC vs ABAC** | ⏳ Planned | - | Implementing Role-Based and Attribute-Based Access Control. |
+| **MFA / 2FA** | ⏳ Planned | - | Implementing Time-based One-Time Passwords (TOTP). |
 
-## 🚀 How to Use
+## 🐛 Phase 2: Common Web Vulnerabilities
 
-Navigate to the specific folder for the concept you are interested in (e.g., OAuth-2.1-Educational) and follow the README.md inside.
+| Concept | Status | Implementation | Description |
+|---------|--------|----------------|-------------|
+| **XSS** | ⏳ Pending | - | Cross-Site Scripting. |
+| **SQL Injection** | ⏳ Pending | - | SQL Injection vectors. |
+| **CSRF** | ⏳ Pending | - | Cross-Site Request Forgery. |
+| **SSRF** | ⏳ Pending | - | Server-Side Request Forgery. |
+| **IDOR** | ⏳ Pending | - | Insecure Direct Object References. |
