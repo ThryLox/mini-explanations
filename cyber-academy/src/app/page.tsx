@@ -101,7 +101,7 @@ export default function Dashboard() {
           <a href="#modules" className="px-8 py-3 bg-white text-slate-900 rounded-full font-bold hover:bg-gray-100 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
             Explore Modules
           </a>
-          <a href="https://github.com/google-deepmind/cyber-academy" target="_blank" className="px-8 py-3 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition backdrop-blur-sm">
+          <a href="https://github.com/ThryLox/mini-explanations" target="_blank" className="px-8 py-3 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition backdrop-blur-sm">
             View Source
           </a>
         </div>
