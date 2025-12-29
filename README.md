@@ -4,7 +4,7 @@ Repository for security concepts, educational implementations, and Proof of Conc
 
 ## 🌟 Featured: [Cybersecurity Academy](./cyber-academy)
 **Interactive Learning Platform** for OAuth 2.1, OIDC, and Web Security.
-👉 **[Launch App](./cyber-academy)** to start the simulation labs.
+👉 **[Launch Live App](https://mini-explanations.vercel.app/)** | [View Source](./cyber-academy)
 
 ## 🛡️ Phase 1: Authentication & Identity
 
