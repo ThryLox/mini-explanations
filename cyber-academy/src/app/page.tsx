@@ -30,7 +30,15 @@ const topics: Record<string, Topic[]> = {
       gradient: "from-purple-600 to-pink-600",
       icon: "🆔"
     },
-    { id: "jwt", title: "JWT Security", desc: "Cracking and securing JSON Web Tokens.", status: "soon", gradient: "from-gray-700 to-gray-600", icon: "🛡️" },
+    {
+      id: "jwt",
+      title: "JWT Security",
+      desc: "Cracking and securing JSON Web Tokens. Brute-force weak secrets and forge admin privileges.",
+      status: "available",
+      link: "/modules/jwt",
+      gradient: "from-gray-700 to-gray-600",
+      icon: "🛡️"
+    },
   ],
   vulnerabilities: [
     { id: "xss", title: "XSS Mastery", desc: "Injecting and preventing malicious scripts.", status: "soon", gradient: "from-red-600 to-orange-600", icon: "💉" },
