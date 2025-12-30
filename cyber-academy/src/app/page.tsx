@@ -41,8 +41,20 @@ const topics: Record<string, Topic[]> = {
     },
   ],
   vulnerabilities: [
-    { id: "xss", title: "XSS Mastery", desc: "Injecting and preventing malicious scripts.", status: "soon", gradient: "from-red-600 to-orange-600", icon: "💉" },
-    { id: "sqli", title: "SQL Injection", desc: "Manipulating database queries.", status: "soon", gradient: "from-orange-600 to-amber-600", icon: "👾" },
+    { id: "xss", title: "XSS Mastery", desc: "Injecting and preventing malicious scripts (Reflected, Stored, DOM).", status: "available", link: "/modules/xss", gradient: "from-red-600 to-orange-600", icon: "💉" },
+    { id: "sqli", title: "SQL Injection", desc: "Manipulating database queries (Union & Error-based).", status: "available", link: "/modules/sqli", gradient: "from-orange-600 to-amber-600", icon: "👾" },
+    { id: "csrf", title: "CSRF", desc: "Forging unauthorized actions on behalf of authenticated users.", status: "soon", gradient: "from-green-600 to-emerald-600", icon: "🎭" },
+    { id: "ssrf", title: "SSRF", desc: "Tricking servers into making internal network requests.", status: "soon", gradient: "from-yellow-600 to-orange-500", icon: "🌐" },
+    { id: "idor", title: "IDOR", desc: "Accessing private data by manipulating IDs.", status: "soon", gradient: "from-teal-600 to-cyan-600", icon: "🔢" },
+  ],
+  api_security: [
+    { id: "graphql", title: "GraphQL Injection", desc: "Abusing introspection and query depth limits.", status: "soon", gradient: "from-pink-600 to-rose-600", icon: "⚛️" },
+    { id: "mass_assignment", title: "Mass Assignment", desc: "Binding internal properties like 'isAdmin' to inputs.", status: "soon", gradient: "from-indigo-500 to-purple-500", icon: "📦" },
+    { id: "race", title: "Race Conditions", desc: "Exploiting Time-of-Check vs Time-of-Use logic flaws.", status: "soon", gradient: "from-red-500 to-pink-500", icon: "🏁" },
+  ],
+  defense: [
+    { id: "waf", title: "WAF Bypass", desc: "How Web Application Firewalls work and how to evade them.", status: "soon", gradient: "from-slate-600 to-gray-600", icon: "🧱" },
+    { id: "headers", title: "Security Headers", desc: "HSTS, CSP, X-Frame-Options: The first line of defense.", status: "soon", gradient: "from-blue-800 to-slate-800", icon: "📑" },
   ]
 };
 
@@ -129,8 +141,24 @@ export default function Dashboard() {
           <span className="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center text-red-400">🕷️</span>
           Web Vulnerabilities
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {topics.vulnerabilities.map(t => <ModuleCard key={t.id} topic={t} />)}
+        </div>
+
+        <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-200">
+          <span className="w-8 h-8 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400">🔌</span>
+          API Security & Logic
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {topics.api_security.map(t => <ModuleCard key={t.id} topic={t} />)}
+        </div>
+
+        <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-200">
+          <span className="w-8 h-8 rounded-lg bg-slate-600/20 flex items-center justify-center text-slate-400">🏗️</span>
+          Defense Engineering
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {topics.defense.map(t => <ModuleCard key={t.id} topic={t} />)}
         </div>
       </div>
 

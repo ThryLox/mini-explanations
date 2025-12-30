@@ -12,7 +12,7 @@ Repository for security concepts, educational implementations, and Proof of Conc
 |---------|--------|----------------|-------------|
 | **OAuth 2.1 (PKCE)** | ✅ Done | [OAuth-2.1-Educational](./OAuth-2.1-Educational) | Authorization Code Flow with PKCE from scratch. |
 | **OpenID Connect (OIDC)** | ✅ Done | [OIDC-Educational](./OIDC-Educational) | Adding Identity (ID Token) on top of OAuth 2.0. |
-| **JWT Security** | ⏳ Planned | - | Deep dive into JSON Web Tokens, signatures, and weaknesses. |
+| **JWT Security** | ✅ Done | [JWT-Educational](./JWT-Educational) | Deep dive into JSON Web Tokens, signatures, and weaknesses. |
 | **Session Management** | ⏳ Planned | - | Secure Cookies (HttpOnly, SameSite) vs LocalStorage. |
 | **RBAC vs ABAC** | ⏳ Planned | - | Implementing Role-Based and Attribute-Based Access Control. |
 | **MFA / 2FA** | ⏳ Planned | - | Implementing Time-based One-Time Passwords (TOTP). |
@@ -21,8 +21,8 @@ Repository for security concepts, educational implementations, and Proof of Conc
 
 | Concept | Status | Implementation | Description |
 |---------|--------|----------------|-------------|
-| **XSS** | ⏳ Pending | - | Cross-Site Scripting. |
-| **SQL Injection** | ⏳ Pending | - | SQL Injection vectors. |
+| **XSS** | ✅ Done | [XSS-Educational](./XSS-Educational) | Cross-Site Scripting (Reflected, Stored, DOM). |
+| **SQL Injection** | ✅ Done | [SQLi-Educational](./SQLi-Educational) | SQL Injection vectors (Authentication Bypass). |
 | **CSRF** | ⏳ Pending | - | Cross-Site Request Forgery. |
 | **SSRF** | ⏳ Pending | - | Server-Side Request Forgery. |
 | **IDOR** | ⏳ Pending | - | Insecure Direct Object References. |

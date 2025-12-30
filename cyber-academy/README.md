@@ -20,6 +20,21 @@
 - **Protected Photos API**: Use your Access Token to fetch data.
 - **Token Introspection**: See how servers validate tokens before granting access.
 
+### 🛡️ JWT Security Lab
+- **Deep Dive**: Learn how JSON Web Tokens are structured and signed.
+- **Attack Simulation**: Crack weak secrets using brute-force and forge admin tokens.
+- **Vulnerability**: "none" algorithm and weak signature bypass.
+
+### 💉 XSS Mastery (Web Vulnerabilities)
+- **Visualizer**: See how malicious scripts get injected into the DOM.
+- **Vulnerable Chat App**: Real-time lab to practice Reflected and Stored XSS.
+- **Defense**: Comparing `innerHTML` vs safe text rendering.
+
+### 👾 SQL Injection (Login Bypass)
+- **Query Builder**: Watch SQL queries being constructed in real-time as you type.
+- **Authentication Bypass**: Use `admin' --` or `OR 1=1` to login without a password.
+- **Prepared Statements**: Visual comparison of insecure vs secure query construction.
+
 ## 🛠️ Tech Stack
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Styling**: Tailwind CSS + Custom "Premium" Glassmorphism UI
