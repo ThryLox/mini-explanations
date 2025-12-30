@@ -17,8 +17,8 @@ function decodeSection(str: string) {
 }
 
 function LabContent() {
-    // Initial State
-    const [token, setToken] = useState<string>("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTYiLCJuYW1lIjoiSm9obiBEb2UiLCJyb2xlIjwidXNlciJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+    // Initial State - Standard jwt.io example token
+    const [token, setToken] = useState<string>("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
     const [parts, setParts] = useState(token.split('.'));
 
     // Attack State
@@ -51,14 +51,14 @@ function LabContent() {
 
         let i = 0;
         const interval = setInterval(() => {
-            const guesses = ["123456", "password", "qwerty", "secret", "admin", "welcome", "iloveyou"];
+            const guesses = ["123456", "password", "qwerty", "secret", "admin", "welcome", "dragon"];
             if (i < guesses.length - 1) {
                 addLog(`Trying: ${guesses[i]}... ❌`);
                 i++;
             } else {
                 clearInterval(interval);
                 addLog(`Trying: ${guesses[i]}... ✅ MATCH!`);
-                setCrackedSecret("iloveyou");
+                setCrackedSecret("dragon");
                 setAttackMode(false);
             }
         }, 300);
@@ -152,17 +152,28 @@ function LabContent() {
                             )}
                         </div>
 
-                        {/* STEP 3: FORGER */}
+                        {/* STEP 3: PAYLOAD TAMPERING */}
                         <div className={`glass-panel p-6 rounded-2xl border border-white/10 bg-slate-900/50 ${!crackedSecret ? 'opacity-50 pointer-events-none' : ''}`}>
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="font-bold text-slate-200">3. Token Forgery</h3>
+                                <h3 className="font-bold text-slate-200">3. Payload Tampering</h3>
                             </div>
+
+                            <div className="mb-4">
+                                <p className="text-xs text-slate-400 mb-2">Modify the payload to elevate privileges:</p>
+                                <textarea
+                                    className="w-full bg-black/50 border border-white/10 rounded-lg p-3 font-mono text-sm text-purple-300 focus:outline-none focus:border-purple-500 transition-colors"
+                                    rows={4}
+                                    defaultValue={JSON.stringify(payloadObj, null, 2)}
+                                    disabled={isAdmin}
+                                />
+                            </div>
+
                             <button
                                 onClick={forgeToken}
                                 disabled={isAdmin}
                                 className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${isAdmin ? 'bg-green-600/50 cursor-default' : 'bg-orange-600 hover:bg-orange-500 shadow-lg shadow-orange-900/20'}`}
                             >
-                                {isAdmin ? '✅ Access Granted' : '✍️ Forge Admin Token'}
+                                {isAdmin ? '✅ Access Granted' : '✍️ Sign & Forge Token'}
                             </button>
                         </div>
 
