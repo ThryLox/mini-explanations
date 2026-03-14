@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Demo</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; background: #f0f0f0; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #e11d48; margin-bottom: 0.5rem; }
+        code { background: #eee; padding: 0.2rem 0.4rem; border-radius: 4px; }
+        .input-group { margin-bottom: 1rem; }
+        input { padding: 0.5rem; width: 100%; box-sizing: border-box; margin-top: 0.5rem; }
+        button { background: #0f172a; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer; border-radius: 4px; }
+        #output { margin-top: 2rem; padding: 1rem; border: 1px dashed #ccc; background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reflected XSS Demo</h1>
+        <p>This page takes the text from the input and renders it directly into the DOM using <code>innerHTML</code> (unsafe).</p>
+        
+        <div class="input-group">
+            <label>Say Hello:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name (or a script!)">
+        </div>
+        <button onclick="sayHello()">Submit</button>
+
+        <div id="output"></div>
+
+        <div style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem;">
+            <h3>Try these payloads:</h3>
+            <ul>
+                <li><code>&lt;b&gt;Bold Text&lt;/b&gt;</code></li>
+                <li><code>&lt;img src=x onerror=alert('XSS')&gt;</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function sayHello() {
+            const name = document.getElementById('nameInput').value;
+            const output = document.getElementById('output');
+            
+            // VULNERABLE: Direct assignment to innerHTML without escaping
+            output.innerHTML = "Hello, " + name + "!";
+        }
+
+        // Also check URL params for 'name' to simulate reflected XSS via link
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameParam = urlParams.get('name');
+        if (nameParam) {
+            document.getElementById('nameInput').value = nameParam;
+            sayHello();
+        }
+    </script>
+</body>
+</html>
